@@ -493,3 +493,102 @@ ul {
 .footer-100 {
   width: 100%;
 }
+
+.jr-main-content {
+  max-width: 700px;
+  margin: 60px auto 80px;
+  padding: 40px 30px;
+  background: rgba(255, 43, 43, 0.08);
+  /* легкий червоний напівпрозорий фон */
+  border-radius: 16px;
+  box-shadow:
+    0 8px 20px rgba(255, 43, 43, 0.3),
+    inset 0 0 40px rgba(255, 255, 255, 0.15);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  user-select: text;
+  transition: box-shadow 0.4s ease;
+}
+
+.jr-main-content:hover {
+  box-shadow:
+    0 12px 30px rgba(255, 43, 43, 0.6),
+    inset 0 0 60px rgba(255, 255, 255, 0.3);
+}
+
+.jr-main-content__title {
+  font-size: 3.2rem;
+  font-weight: 900;
+  color: #ff2b2b;
+  margin-bottom: 32px;
+  letter-spacing: 2px;
+  text-shadow:
+    0 0 12px #ff2b2b99,
+    0 0 30px #ff2b2b55;
+  user-select: none;
+  position: relative;
+  z-index: 1;
+  cursor: default;
+  transition: color 0.3s ease;
+}
+
+.jr-main-content__title::after {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #ff2b2b, transparent);
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  border-radius: 4px;
+  box-shadow: 0 0 15px #ff2b2b88;
+  transition: width 0.3s ease;
+  z-index: 0;
+}
+
+.jr-main-content__title:hover::after {
+  width: 150px;
+}
+
+.jr-main-content__paragraph {
+  font-size: 1.25rem;
+  line-height: 1.7;
+  color: #eee;
+  margin-bottom: 22px;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+  transition: color 0.3s ease;
+  cursor: default;
+}
+
+.jr-main-content__paragraph:hover {
+  color: #ff2b2b;
+  text-shadow:
+    0 0 12px #ff2b2b,
+    0 0 20px #ff6b6b;
+}
+
+.jr-main-content__paragraph:last-child {
+  margin-bottom: 0;
+}
+
+/* Адаптивність */
+@media (max-width: 480px) {
+  .jr-main-content {
+    padding: 30px 20px;
+    margin: 40px auto 60px;
+  }
+
+  .jr-main-content__title {
+    font-size: 2.4rem;
+    letter-spacing: 1.5px;
+  }
+
+  .jr-main-content__paragraph {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}

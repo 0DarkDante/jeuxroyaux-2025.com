@@ -1,0 +1,154 @@
+/* === RESET & BASE === */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  background-color: #1c1800;
+  color: #f5f5f5;
+  line-height: 1.6;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+/* === LINKS === */
+a {
+  color: #FFA000;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* === LIST RESET === */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* === CONTAINER === */
+.container,
+.jr-header__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.jr-header {
+  background: linear-gradient(to bottom, #441313, #1c1800);
+  padding: 0 0 40px 0;
+  border-bottom: 2px solid #5c5a02;
+}
+
+.jr-header__menu-wrapper {
+  width: 100%;
+  background-color: #2b2b2b;
+  /* або інший темний колір */
+  padding: 0;
+  background-color: #441313;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.jr-header__menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-flex {
+  display: flex;
+  align-items: center;
+}
+
+.jr-header__logo-wrapper img {
+  max-height: 60px;
+}
+
+.jr-header__content {
+  margin-top: 40px;
+}
+.jr-header__title {
+  font-size: 3rem;
+  /* було 2rem */
+  font-weight: 700;
+  color: #ffffff;
+  /* білий заголовок */
+  margin-bottom: 24px;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+.jr-header__subtitle {
+  font-size: 1.125rem;
+  color: #e0e0e0;
+  text-align: center;
+  margin: 0 auto 32px auto;
+  max-width: 900px;
+  line-height: 1.6;
+}
+
+.jr-header__advantages {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+      justify-content: space-evenly;
+}
+
+.jr-header__advantage {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+}
+.jr-header__advantage-text {
+  font-size: 1.3rem;
+  font-weight: 700;
+    background: linear-gradient(270deg, #ffffff, #ffffff, #ff8585d4, #832b2b);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: whiteGlowShift 8s ease infinite;
+  text-shadow:
+    0 0 6px rgba(255, 255, 255, 0.8),
+    0 0 12px rgba(255, 255, 255, 0.5);
+  user-select: none;
+  transition: text-shadow 0.3s ease;
+}
+
+.jr-header__advantage-text:hover {
+  text-shadow:
+    0 0 12px #ffffff,
+    0 0 24px #ffffff;
+  cursor: pointer;
+}
+
+@keyframes whiteGlowShift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  25% {
+    background-position: 50% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  75% {
+    background-position: 50% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}

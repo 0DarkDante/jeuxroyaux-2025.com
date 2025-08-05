@@ -76,3 +76,45 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('ageModal');
+  const btnYes = document.getElementById('ageYes');
+  const btnNo = document.getElementById('ageNo');
+
+  function openModal() {
+    modal.classList.add('show');
+    modal.querySelector('.modal-window').focus();
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modal.classList.remove('show');
+    document.body.style.overflow = '';
+  }
+
+  btnYes.addEventListener('click', () => {
+    localStorage.setItem('isAdult', 'true');
+    closeModal();
+  });
+
+  btnNo.addEventListener('click', () => {
+    // Якщо вік менше 18 — редірект на Google
+    window.location.href = 'https://www.google.com';
+  });
+
+  modal.addEventListener('click', e => {
+    if (e.target === modal) closeModal();
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && modal.classList.contains('show')) {
+      closeModal();
+    }
+  });
+
+  if (localStorage.getItem('isAdult') !== 'true') {
+    openModal();
+  }
+});
+

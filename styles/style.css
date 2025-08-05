@@ -1181,3 +1181,84 @@ ul {
   outline: none;
   transform: translateY(-1px);
 }
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.modal-overlay.show {
+  display: flex;
+}
+
+.modal-window {
+  background: #fff;
+  border-radius: 14px;
+  max-width: 400px;
+  width: 100%;
+  padding: 30px 28px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+  outline: none;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.modal-title {
+  margin: 0 0 28px;
+  font-size: 1.7rem;
+  color: #222;
+  user-select: none;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.modal-btn {
+  padding: 14px 38px;
+  border-radius: 28px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  user-select: none;
+  border: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.15s ease;
+  min-width: 120px;
+}
+
+.modal-btn-confirm {
+  background: linear-gradient(90deg, #28a745 0%, #1e7e34 100%);
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(40, 167, 69, 0.85);
+}
+
+.modal-btn-confirm:hover,
+.modal-btn-confirm:focus {
+  background: linear-gradient(90deg, #1e7e34 0%, #28a745 100%);
+  box-shadow: 0 8px 24px rgba(30, 126, 52, 1);
+  outline: none;
+  transform: translateY(-2px);
+}
+
+.modal-btn-cancel {
+  background: linear-gradient(90deg, #dc3545 0%, #a71d2a 100%);
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(220, 53, 69, 0.85);
+}
+
+.modal-btn-cancel:hover,
+.modal-btn-cancel:focus {
+  background: linear-gradient(90deg, #a71d2a 0%, #dc3545 100%);
+  box-shadow: 0 8px 24px rgba(167, 29, 42, 1);
+  outline: none;
+  transform: translateY(-2px);
+}

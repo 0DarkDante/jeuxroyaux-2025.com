@@ -118,3 +118,28 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  const banner = document.getElementById('cookie-banner');
+  const acceptBtn = document.getElementById('accept-cookies');
+  const rejectBtn = document.getElementById('reject-cookies');
+
+  const COOKIE_KEY = 'cookiesAccepted';
+
+  // Показуємо банер, якщо користувач ще не вибрав
+  if (!localStorage.getItem(COOKIE_KEY)) {
+  banner.classList.remove('hidden');
+} else {
+  banner.classList.add('hidden');
+}
+
+  acceptBtn.addEventListener('click', () => {
+    localStorage.setItem(COOKIE_KEY, 'true');
+    banner.style.display = 'none';
+  });
+
+  rejectBtn.addEventListener('click', () => {
+    localStorage.setItem(COOKIE_KEY, 'false');
+    banner.style.display = 'none';
+  });
+});
+
